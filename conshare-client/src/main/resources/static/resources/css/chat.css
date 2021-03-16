@@ -1,0 +1,78 @@
+body{
+	background-color: #DDDDDD;
+
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input[type=text]{
+    height: 16px;
+    min-width: 500px;
+    margin-top: 4px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid silver;
+}
+input[type=button]{
+    height: 38px;
+    width: 80px;
+}
+ul{
+    border: 0px;
+    margin: 0px;
+    padding: 10px 0px;
+}
+li{
+    list-style-type: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 10px;
+}
+li:hover{
+    background-color: silver;
+}
+.userSelected{
+    background-color: black;
+    color: white;
+}
+.container{
+    flex:1;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px black;
+    max-width: 830px;
+    height: 480px;
+    display: none;
+}
+.status{
+    width: 100%;
+    text-align: center;
+
+}
+.chat{
+    border: 1px solid silver;
+    border-radius: 4px;
+    width: 600px;
+    height: 330px;
+    float: left;
+    margin-right: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.usersList{
+    border: 1px solid silver;
+    border-radius: 4px;
+    width: 174px;
+    height: 330px;
+    float: left;
+}
+.autenticate{
+    margin-top: 10px;
+}
+.sendMessage{
+    margin-top: 10px;
+    display: none;
+}
+.message{
+    margin:10px 8px;
+}

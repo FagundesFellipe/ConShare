@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+<meta charset="UTF-8">
+<title>Cadastrar</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<div id="layoutAuthentication">
+			<div id="layoutAuthentication_content">
+
+				<hr>
+				<main>
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-7">
+								<div class="card shadow-lg border-dark rounded-lg mt-2">
+									<div class="card-header mt-0">
+										<h3 class="text-center font-weight-dark mt-0">Crie sua
+											conta!</h3>
+
+									</div>
+									<div class="card-body">
+										<form th:action="@{/access/create}" method="POST"
+											th:object="${usuario}">
+											<div class="form-row">
+												<div class="col-md-4">
+													<div class="form-group">
+														<label class="big mb-2" for="inputFirstName">Nome</label><input
+															class="form-control py-4" id="inputFirstName" type="text"
+															placeholder="Insira seu nome" th:field="${usuario.nome}" />
+													</div>
+
+												</div>
+
+												<div class="col-md-8">
+													<div class="form-group">
+														<label class="big mb-2" for="inputLastName">Sobrenome</label><input
+															class="form-control py-4" id="inputLastName" type="text"
+															placeholder="Insira o seu sobrenome"
+															th:field="${usuario.sobrenome}" />
+													</div>
+												</div>
+											</div>
+
+
+
+											<div class="form-group">
+												<label class="big mb-2" for="inputEmailAddress">Email</label><input
+													class="form-control py-4" id="inputEmailAddress"
+													type="email" aria-describedby="emailHelp"
+													placeholder="Insira o endereço de email"
+													th:field="${usuario.email}" />
+											</div>
+
+
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputPassword">Senha</label><input
+															class="form-control py-4" id="inputPassword"
+															type="password" placeholder="Insira a senha"
+															th:field="${usuario.senha}" />
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputConfirmPassword">Confirme
+															a senha</label><input class="form-control py-4"
+															id="inputConfirmPassword" type="password"
+															placeholder="Confirme a senha" />
+													</div>
+												</div>
+											</div>
+
+
+											<div class="form-row">
+												<div class="col-md-5">
+													<div class="form-group">
+														<label class="big mb-2" for="inputCell">Celular</label><input
+															class="form-control py-4" id="inputCell" type="text"
+															placeholder="Insira seu celular"
+															th:field="${usuario.celular}" />
+													</div>
+												</div>
+												<div class="col-md-5">
+													<div class="form-group">
+														<label class="big mb-2" for="inputCpf">Cpf</label><input
+															class="form-control py-4" id="inputCpf" type="text"
+															placeholder="Insira o seu cpf" th:field="${usuario.cpf}" />
+													</div>
+												</div>
+											</div>
+
+
+
+
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputNasc">Data de
+															Nascimento</label><input class="form-control py-4" id="inputNasc"
+															type="date" placeholder="Insira sua data de nasc" th:field="${usuario.ano_nascimento}" /> 
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="exampleFormControlTextarea1">Você é um:</label>
+													<div class="input-group mb-10">
+														<select class="custom-select" id="inputGroupSelect01" name="tipo">
+															<option value="professor">Professor</option>
+															<option value="aluno">Aluno</option>
+
+														</select>
+													</div>
+												</div>
+
+											</div>
+
+
+											<div class="form-row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputFormac">Formação</label>
+														<input class="form-control py-4" id="inputFormac"
+															type="text" placeholder="Insira o que você busca aqui"
+															th:field="${usuario.formacao}" />
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label class="big mb-2" for="inputFormac">Nickname</label>
+														<input class="form-control py-4" id="inputNickName"
+															type="text" placeholder="Insira um NickName"
+															th:field="${usuario.nickname}" />
+													</div>
+												</div>
+											</div>
+
+
+											<div class="col-md-20">
+												<div class="form-group">
+													<label class="big mb-2" for="inputIntent">Intenções
+														de pesquisa</label> <input class="form-control py-4"
+														id="inputIntent" type="text"
+														placeholder="Insira o que você busca aqui"
+														th:field="${usuario.interesses_de_pesquisa}" />
+												</div>
+											</div>
+
+
+
+
+											<button type="submit"
+												class="btn btn-outline-secondary btn-block">Criar
+												Conta</button>
+
+										</form>
+									</div>
+									<div class="card-footer text-center">
+										<div class="small">
+											<a th:href="@{/access/login}">Já possui uma conta? Faça o
+												login</a>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</main>
+
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

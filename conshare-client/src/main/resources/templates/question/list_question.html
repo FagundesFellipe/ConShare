@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>Listar questoes</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+
+
+		<img src="/resources/assets/img_question/CAPAFORUM.png"
+			class="img-fluid mt-4 " alt="Responsive image">
+
+
+		<nav class="navbar navbar-light" id="navbar-listquestion">
+			<a class="navbar-brand">Filtre suas perguntas</a>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</nav>
+
+
+
+
+		<div th:each="questions : ${questions}">
+
+
+			<div class="card mt-4" style="width: 50rem; height: 8rem"
+				id="card-list-question">
+
+
+				<div class="card-body">
+
+
+					<div class="row">
+						<div class="col-8">
+							<h5 th:text="*{questions.titulo}" id="title-card-listquestion"
+								class="card-title">Titulo ref</h5>
+
+							<p th:text="*{questions.descricao}" id="text-card-listquestion"
+								class="card-text">Some quick example text to build on the
+								card title and make up the bulk of the card's content.</p>
+
+						</div>
+						<div class="col-4">
+							<div class="row">
+								<a class="btn btn-outline-danger btn-lg mt-2 rounded-pill"
+									th:href="@{/answer/list_answer}">Respostas</a> <a
+									th:href="@{/question/detail-question/{id} (id=${questions.id})}"
+									class="btn btn-outline-danger btn-lg mt-2 rounded-pill">Editar</a>
+
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+
+
+</body>
+</html>

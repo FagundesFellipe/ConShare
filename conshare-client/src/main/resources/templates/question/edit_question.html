@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>Editar Questoes</title>
+<link href="/resources/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		<h1 id="titlepagescollavorationdetail">Editar Perguntas</h1>
+
+			<form th:action="@{/question/update}" method="POST"
+				th:object="${questions}">
+
+		<div class="mt-4">
+
+
+
+				<div class="row">
+					<div class="col-4">
+						<h2 id="text-title-add-question">Titulo:</h2>
+					</div>
+					<div class="col-8">
+
+
+						<input type="text" id="design-imput-add-question"
+							class="form-control"
+							placeholder="Ex: Como fazer dividir numeros com vírgula" th:field="${questions.titulo}" />
+
+					</div>
+
+				</div>
+
+				<hr>
+
+				<div class="row">
+					<div class="col-4">
+						<h2 id="text-title-add-question">Genero:</h2>
+					</div>
+					<div class="col-8">
+
+						<input type="text" id="design-imput-add-question"
+							class="form-control"
+							placeholder="Ex: Matematica, Portugues" th:field="${questions.categoria}"/>
+
+					</div>
+
+				</div>
+
+				<hr>
+
+
+
+				<div class="row">
+					<div class="col-4">
+						<h2 id="text-title-add-question">Descriçao:</h2>
+					</div>
+					<div class="col-8">
+
+
+						<input class="form-control mt-0" type="text"
+							id="design-imput-descricao-add-question"
+							placeholder="Caso nescessario, adicione mais informaçoes" th:field="${questions.descricao}"/>
+					</div>
+
+
+
+				</div>
+		</div>
+
+		<div class="text-center">
+
+			<button class="btn btn-primary col-10" type="submit" id="btn-editar-atualizar">Atualizar</button>
+
+			<input type="hidden" th:field="${questions.id}">
+
+
+		</div>
+
+		</form>
+
+
+	</div>
+
+</body>
+</html>

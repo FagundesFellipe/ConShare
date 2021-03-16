@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Aberto - Sala 01</title>
+
+<!-- importação de estilos -->
+<link href="/resources/css/chat.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+	<div layout:fragment="body">
+	
+
+
+		<!-- Container principal -->
+		<div class="container">
+
+			<!-- Container de status de conexão -->
+			<div class="status">
+				<b>Status da conexão: </b>aguardando conexão...
+			</div>
+
+			<!-- tabela utilizada para organizar os objetos na tela -->
+			<table>
+				<tr>
+					<td><b>Chat:</b></td>
+					<td><b>Enviar mensagem para:</b></td>
+				</tr>
+				<tr>
+					<!-- Container do chat -->
+					<td>
+						<div class="chat"></div>
+					</td>
+					<!-- Container dos usuarios logados -->
+					<td>
+						<div class="usersList">
+							<ul>
+								<li class="userSelected">Todos</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<!-- Container de autenticação, utilizado para enviar o nome de usuarios ao servidor -->
+			<!-- Será checado se há duplicidade no nome do usuario do lado do servidor -->
+			<!-- Após a autenticação este container deixa de ser exibido e passa a ser exibido o container de mensagens -->
+			<div class="autenticate">
+				<span><b>Informe seu nome de usuário aqui:</b></span><br> <input
+					type="text" id="txtusername"
+					placeholder="Informe seu nome para iniciar o chat"> <input
+					type="button" id="bntautenticar" value="Enviar"
+					onclick="Autenticar()">
+			</div>
+			<!-- Container de envio de mensagens. Antes de autenticar este container não é exibido -->
+			<div class="sendMessage">
+				<span><b>Conectado como: </b>Não conectatdo</span><br> <input
+					type="text" id="txtmessage"
+					placeholder="Informe aqui a mensagem a ser enviada"> <input
+					type="button" id="bntenviar" value="Enviar"
+					onclick="enviarMensagem()">
+			</div>
+		</div>
+		<br>
+		
+		</div>
+</body>
+</html>
+
+<!-- Importação da biblioteca JQuery diretamente do servidor do Google -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Importação da biblioteca de funções do proprio Chat -->
+<script src="/resources/js/chat.js"></script>

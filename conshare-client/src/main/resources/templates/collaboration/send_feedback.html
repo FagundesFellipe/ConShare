@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layoutConShare}">
+<head>
+<meta charset="UTF-8">
+<title>Enviar feedback</title>
+</head>
+<body>
+
+	<div layout:fragment="body">
+
+		
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-7">
+								<div class="card shadow-lg border-dark rounded-lg mt-2">
+									<div class="card-header mt-0">
+										<h3 class="text-center font-weight-dark mt-0">Envie seu
+											feedback!</h3>
+										<h6 class="text-center font-weight-dark mt-0">Nos ajude a
+											te ajudar! Dê a nota de sua expêriencia na plataforma e
+											escreva quem sabe algum elogio ou sua critica construtiva!</h6>
+									</div>
+									<div class="card-body">
+										<form th:action="@{/feedback/create}" method="POST"
+											th:object="${feedback}">
+
+
+											<label for="exampleFormControlTextarea1">Para você, o
+												ConShare é nota:</label>
+
+											<div class="form-check-inline">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" name="nota" value="1">1
+												</label>
+											</div>
+											<div class="form-check-inline">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" name="nota" value="2">2
+												</label>
+											</div>
+											<div class="form-check-inline disabled">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" name="nota" value="3">3
+												</label>
+											</div>
+											<div class="form-check-inline disabled">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" name="nota" value="4">4
+												</label>
+											</div>
+											<div class="form-check-inline disabled">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" name="nota" value="5">5
+												</label>
+											</div>
+
+											<div class="form-group">
+												<label for="exampleFormControlTextarea1">Informações
+													adicionais:</label> <input class="form-control"
+													id="exampleFormControlTextarea1" rows="3"
+													th:field="${feedback.informacao_adicional}"></input>
+											</div>
+
+											<div class="card-footer text-center">
+												<a th:href="@{/collaboration/start}"
+													class="btn btn-outline-secondary btn-lg mt-4" role="button"
+													aria-pressed="true" id="btn-pos-cancel">Cancelar</a>
+
+												<button type="submit"
+													class="btn btn-outline-secondary btn-lg mt-4" role="button"
+													aria-pressed="true" id="btn-pos-send">Enviar</button>
+											</div>
+
+										</form>
+									</div>
+
+									<div class="progress"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+	<script src="/resources/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="/resources/js/scripts.js"></script>
+	<script src="/resources/js/datatable/jquery.dataTables.min.js"></script>
+	<script src="/resources/css/datatable/dataTables.bootstrap4.min.js"></script>
+	<script src="/resources/assets/demo/datatables-init.js"></script>
+</body>
+</html>
